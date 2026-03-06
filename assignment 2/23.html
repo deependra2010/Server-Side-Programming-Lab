@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <img id="slide" src="./img1.png" height="300">
+
+    <br><br>
+    <button onclick="prev()"> <- Previous </button>
+            <button onclick="next()">Next -> </button>
+
+            <script>
+                let images = ["./img1.png", "./img2.png", "./img3.png"];
+                let index = 0;
+
+                function showImage() {
+                    document.getElementById("slide").src = images[index];
+                }
+
+                function next() {
+                    index = (index + 1) % images.length;
+                    showImage();
+                }
+
+                function prev() {
+                    index = (index - 1 + images.length) % images.length;
+                    showImage();
+                }
+            </script>
+
+</body>
+
+</html>
